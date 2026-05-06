@@ -256,6 +256,7 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
     <button class="fc" onclick="tf('ZION')">ZION</button>
     <button class="fc" onclick="tf('WAT')">WAT</button>
     <button class="fc" onclick="tf('WP')">World Papers</button>
+    <button class="fc" style="border-color:var(--crimson);color:var(--crimson)" onclick="tf('EDM')">Edom Threshold</button>
   </div>
   <div class="sb-list" id="sb-list"></div>
 </aside>
@@ -271,6 +272,16 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
         <cite>Numbers 11:29 (KJV)</cite>
       </div>
       <div class="home-body">Select any entry from the sidebar to begin. Use the filter chips to browse by output type or collection. Free entries open immediately. Paid entries show a preview and an obtain button.</div>
+      <div style="border:1px solid var(--crimson);background:var(--crim-pale);padding:14px 16px;margin-bottom:1.25rem">
+        <div style="font-family:var(--fm);font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:6px">New series · May 2026</div>
+        <div style="font-family:var(--fd);font-size:16px;font-weight:500;color:#3d0808;margin-bottom:4px">The Edom Threshold</div>
+        <div style="font-family:var(--fb);font-size:13px;font-style:italic;color:var(--crimson);margin-bottom:10px">A pilgrim's theology in 18 scrolls — Seir to Hermon</div>
+        <div style="font-family:var(--fb);font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:12px">You do not start at the promise. You start at Seir — holding something you have not yet become worthy of holding. Everything between here and Hermon is what God does to fix that.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="hcta primary" style="background:var(--crimson);border-color:var(--crimson);color:#fff" onclick="selectEntry('SON-EDM-001')">Begin with Seir &rarr;</button>
+          <button class="hcta" onclick="tf('EDM')">Browse all 18 scrolls</button>
+        </div>
+      </div>
       <div class="home-collections" id="home-cols"></div>
       <div class="home-cta">
         <button class="hcta primary" onclick="document.getElementById('srch').focus()">Browse the archive</button>
@@ -296,6 +307,7 @@ const COLLECTIONS = {
   ARC:{name:'Architecture Frameworks',desc:'System frameworks governing the SON archive',color:'var(--purple)',pale:'var(--purp-pale)'},
   WP:{name:'World Papers',desc:'Prophetic-geopolitical monographs and expanded studies',color:'var(--gold)',pale:'var(--gold-pale)'},
   COS:{name:'Cosmos Studies',desc:'Creation, cosmology, and the structure of the ages',color:'var(--ink-mid)',pale:'var(--parch-mid)'},
+  EDM:{name:'Edom Threshold Series',desc:'A pilgrim's theology in 18 scrolls — Seir to Hermon',color:'var(--crimson)',pale:'var(--crim-pale)'},
 };
 
 const TYPE_COLOR = {
@@ -304,6 +316,381 @@ const TYPE_COLOR = {
 };
 
 const ENTRIES = [
+
+  // ── EDOM THRESHOLD SERIES (SON-EDM-001 through 021) ──
+
+  {id:'SON-EDM-001',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Edom Threshold — Series Introduction',subtitle:'A pilgrim\'s theology in 18 scrolls',
+   burden:'You do not start at the promise. You start at Seir.',
+   anchor:'Deuteronomy 2:5; Judges 5:4; Matthew 17:5',
+   summary:[
+     {k:'What this series is',v:'A canonical geography chain — 18 locations, 18 scrolls, one theological argument: raw possession does not equal covenant approval, and the journey from one to the other is the journey from Edom to the Transfiguration.'},
+     {k:'The chain',v:'Seir → Teman → Bozrah → Paran → Sinai → Kadesh → Hor → Petra → Sela → Rekem → Maon → Zered → Arnon → Jabbok → Yarmuk → Jordan → Hermon'},
+     {k:'Five phases',v:'Phase 1: Possession (Seir–Paran) · Phase 2: Covenant Crisis (Sinai–Hor) · Phase 3: Stone Cities (Petra–Maon) · Phase 4: River Crossings (Zered–Jordan) · Crown: Hermon'},
+     {k:'How to read it',v:'Each scroll stands alone. The series rewards sequential reading. The page weight is intentional — the stone cities are heavy, the river crossings are thin. Feel the rhythm.'},
+     {k:'Origin',v:'School of the Nabi · Daniel Hawkins · Written May 2026 · SON-EDM-004 through 021'},
+   ],
+   scripture:[
+     {ref:'Deuteronomy 2:5',note:'"I have given mount Seir unto Esau for a possession" — legitimate gift outside covenant; the starting condition'},
+     {ref:'Judges 5:4',note:'"Lord, when thou wentest out from Seir, when thou marchedst from the field of Edom" — the same mountain as theophanic origin point'},
+     {ref:'Matthew 17:5',note:'"This is my beloved Son... hear ye him" — the voice from Hermon; the chain closes not with conquest but with a word'},
+   ],
+   tabs:['summary','scripture','body'],
+   body:`<div class="scroll-body">
+     <div class="burden">The invitation</div>
+     <p>You do not start at the promise. You start at Seir.</p>
+     <p>Seir is the mountain you hold before you have become worthy of holding it. It is legitimate possession — God gave Seir to Esau, and God gave you what you carry. The question is never whether the gift is real. The question is what the gift is doing to you.</p>
+     <div class="anchor">"I have given mount Seir unto Esau for a possession." — Deuteronomy 2:5</div>
+     <h3>The argument of the series</h3>
+     <p>Every node in this chain is a place. Every place is a condition. The soul that walks from Seir to Hermon is not walking across a map — it is being unmade and remade, stripped of every false wall, every cold theology, every fortress built to protect what it should have offered.</p>
+     <p>Teman tries to explain the inheritance. Bozrah builds walls around the explanation. Paran strips everything. Sinai gives the law — and the people build a calf before Moses returns. Kadesh forces the decision, and the whole generation chooses fear. Hor transfers the office through death. The stone cities show you beauty without covenant and pride without surrender. The rivers ask you to cross before the water stops.</p>
+     <p>And then Hermon. After all of it — the stripping, the dying, the wrestling, the crossing — Jesus stands on the mountain and his face shines like the sun. Peter wants to build three tents and stay. The cloud lifts. They go back down.</p>
+     <p>Because the mountaintop was never the destination. It was the source of the descent.</p>
+     <h3>How to use this series</h3>
+     <p>Begin with SON-EDM-004 — The Seir Scroll. Each scroll opens with a Text Core that states the theology of that place in plain terms. Read it slowly. Then follow the engines — Geography, Scripture, Lexicon, Pattern, Application. The series was written as a walk. Walk it.</p>
+     <p>The later scrolls are shorter. That is not a deficiency. You cross a river fast. You do not linger at Zered. Feel the pages thin as the crossings approach. The rhythm is the theology.</p>
+   </div>`,
+   triggers:['SON-EDM-004: The Seir Scroll — begin here','SON-EDM-021: The Hermon Scroll — the crown','Browse all 18 scrolls in this series'],
+  },
+
+  {id:'SON-EDM-004',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Seir Scroll',subtitle:'Phase 1 · Possession · Node 1 of 17',
+   burden:'Seir is what a man holds before he has become worthy of holding it',
+   anchor:'Genesis 36:8; Deuteronomy 2:5; Ezekiel 35; Obadiah 1:3',
+   summary:[
+     {k:'Core tension',v:'Possession vs. Covenant'},
+     {k:'Theological identity',v:'Untransformed inheritance — legitimate possession outside the refining fire of covenant obligation. You can hold what God gives you and still be judged for how you hold it.'},
+     {k:'Key paradox',v:'Deuteronomy 2:5 grants Seir to Esau by divine command. Ezekiel 35 pronounces full judgment on Mount Seir. The same gift, the same land — the shift happens when possession hardens into hostility.'},
+     {k:'Pre-Esauite layer',v:'The Horites inhabited Seir before Esau. Genesis 14:6 names them. Esau\'s descendants dispossessed them. Seir always stands on older bones. This is the warning.'},
+     {k:'Engines',v:'17 engines: Text Core · Geographic Analysis · Scriptural Matrix · Lexicon · Cosmic Link · Pattern Recognition · Contrast Engine · Narrative Expansion · Visual Diagram · Application · Transition Bridge · Appendix · Scripture Index · Jewish Literature · Early Witness · Anomaly Register · Synthesis'},
+   ],
+   scripture:[
+     {ref:'Genesis 36:8',note:'"So Esau settled in the hill country of Seir (Esau is Edom)" — primary identification; person, land, and people collapsed into one'},
+     {ref:'Deuteronomy 2:5',note:'"I will not give you any of their land, for I have given Mount Seir to Esau as a possession" — legitimacy established by divine grant'},
+     {ref:'Ezekiel 35:3',note:'"I am against you, Mount Seir, and I will stretch out my hand against you" — the same gift becomes a target through pride and hostility'},
+     {ref:'Obadiah 1:3–4',note:'"The pride of your heart has deceived you, you who dwell in the clefts of the rock" — Seir\'s elevation becomes its indictment'},
+     {ref:'Judges 5:4',note:'"LORD, when you went out from Seir, when you marched from the field of Edom, the earth trembled" — positive pole: Seir as theophanic origin'},
+     {ref:'Malachi 1:2–5',note:'"Esau I have hated... they will build, but I will tear down" — final canonical witness to Seir\'s trajectory'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-006: The Teman Scroll — next node','SON-EDM-001: Series Introduction','The Horites — pre-Edomite inhabitants of Seir','Ezekiel 35 full oracle against Mount Seir'],
+  },
+
+  {id:'SON-EDM-006',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Teman Scroll',subtitle:'Phase 1 · Justification · Node 2 of 17',
+   burden:'Teman is what a man builds to justify his inheritance — but if he does not bleed, his building becomes an accusation',
+   anchor:'Job 2:11; Job 42:7; Jeremiah 49:7; Habakkuk 3:3',
+   summary:[
+     {k:'Core tension',v:'Wisdom vs. Truth'},
+     {k:'Theological identity',v:'Wisdom without love. The Temanite spirit does not deny God — it enlists God as a character in its own justification. Eliphaz speaks of visions, divine revelation, and the justice of the Almighty. He is not an atheist. He is a theologian — and a dangerous one.'},
+     {k:'The paradox',v:'Job 42:7 — God declares Eliphaz has not spoken "what is right," despite his orthodox theology. You can be correct and still be wrong. Your doctrine can be impeccable and your heart can be cold.'},
+     {k:'The positive pole',v:'Habakkuk 3:3 — "God came from Teman, the Holy One from Mount Paran." The same region that produced cold comfort for Job also witnessed divine splendor. Teman is not inherently evil.'},
+   ],
+   scripture:[
+     {ref:'Job 2:11',note:'"Eliphaz the Temanite" — first friend, first to speak; wisdom as genealogical inheritance from Edom'},
+     {ref:'Job 42:7',note:'"You have not spoken of me what is right, as my servant Job has" — God\'s verdict against correct theology wrongly applied'},
+     {ref:'Jeremiah 49:7',note:'"Is wisdom no more in Teman? Has counsel perished from the prudent?" — judgment removes Teman\'s defining characteristic'},
+     {ref:'Habakkuk 3:3',note:'"God came from Teman, the Holy One from Mount Paran" — theophanic origin; the positive pole of Teman'},
+     {ref:'Amos 1:12',note:'"I will send fire upon Teman, and it shall devour the palaces of Bozrah" — Teman and Bozrah judged together'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-004: The Seir Scroll — previous node','SON-EDM-007: The Bozrah Scroll — next node','Eliphaz the Temanite — full exegesis of Job 4–5, 15, 22','The older brother in Luke 15 — Teman pattern in the NT'],
+  },
+
+  {id:'SON-EDM-007',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Bozrah Scroll',subtitle:'Phase 1 · Fortification · Node 3 of 17',
+   burden:'Bozrah is what a man builds to keep his inheritance safe — but if he does not open the gates, the inheritance becomes a tomb',
+   anchor:'Isaiah 34:6; Isaiah 63:1; Amos 1:12; Micah 2:12',
+   summary:[
+     {k:'Core tension',v:'Strength vs. Surrender'},
+     {k:'Theological identity',v:'Strength that has forgotten why it was strong. The sheepfold that became a fortress. Walls built to protect the gift become walls that exclude mercy, the brother, and finally God.'},
+     {k:'The Isaiah paradox',v:'Isaiah 63:1 — "Who is this coming from Edom, from Bozrah with crimson garments?" The divine warrior marches out of the very city under judgment. Bozrah must fall so God can march out of it.'},
+     {k:'Name meaning',v:'Bozrah (בָּצְרָה) — sheepfold, enclosure. The pastoral term that became a military capital. What was meant to protect livestock becomes a walled city that encloses the human heart.'},
+   ],
+   scripture:[
+     {ref:'Isaiah 34:6',note:'"The sword of the LORD is filled with blood... for the LORD has a sacrifice in Bozrah" — the fortified city as site of divine judgment'},
+     {ref:'Isaiah 63:1',note:'"Who is this coming from Edom, from Bozrah with crimson garments?" — divine warrior emerging from the condemned city'},
+     {ref:'Amos 1:12',note:'"I will send fire upon Teman, and it shall devour the palaces of Bozrah" — wisdom and fortress judged together'},
+     {ref:'Micah 2:12',note:'"I will surely gather all of you, O Jacob... like a flock in its pasture, like a flock in its fold [Bozrah]" — redemptive reversal: the enclosure becomes gathering point'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-006: The Teman Scroll — previous node','SON-EDM-008: The Paran Scroll — next node','Isaiah 63 — the divine warrior from Bozrah','Buseirah excavations — Iron Age Edomite capital'],
+  },
+
+  {id:'SON-EDM-008',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Paran Scroll',subtitle:'Phase 1 · Wilderness Exposure · Node 4 of 17',
+   burden:'Paran is the place where walls become sand',
+   anchor:'Genesis 21:21; Numbers 10:12; Deuteronomy 33:2; Habakkuk 3:3',
+   summary:[
+     {k:'Core tension',v:'Exposure vs. Formation'},
+     {k:'Theological identity',v:'The wilderness that swallows all human construction. No king rules here, no city stands, no wisdom explains. There is only rock, sky, and the slow erasure of every claim. Paran is exposure before formation.'},
+     {k:'The dual identity',v:'Paran is the wilderness of Ishmael (Genesis 21:21) — rejection and exile. It is also the mountain from which God\'s glory shone (Deuteronomy 33:2) — revelation and power. The same wilderness kills and makes alive.'},
+     {k:'The new generation',v:'The generation that died in Paran did not enter the land. The generation born in Paran will cross the Jordan. Paran is not punishment — it is a furnace that burns away Egypt, Seir, and Bozrah. What emerges is either faith or despair.'},
+   ],
+   scripture:[
+     {ref:'Genesis 21:21',note:'"He dwelt in the wilderness of Paran" — Ishmael in exile; Paran as the place of the rejected son'},
+     {ref:'Numbers 10:12',note:'"The Israelites set out... and the cloud settled in the wilderness of Paran" — the covenant community enters the stripping place'},
+     {ref:'Deuteronomy 33:2',note:'"The LORD came from Sinai and dawned from Seir upon us; he shone forth from Mount Paran" — theophanic origin; Paran as glory corridor'},
+     {ref:'Habakkuk 3:3',note:'"God came from Teman, the Holy One from Mount Paran" — the southern theophanic corridor confirmed in prophetic poetry'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-007: The Bozrah Scroll — previous node','SON-EDM-009: The Sinai Scroll — next node','The southern theophanic corridor — Seir, Paran, Teman, Sinai','Ishmael in Paran — the rejected son theology'],
+  },
+
+  {id:'SON-EDM-009',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Sinai Scroll',subtitle:'Phase 2 · Covenant Confrontation · Node 5 of 17',
+   burden:'Sinai is not a mountain — it is the collision between divine holiness and human exposure',
+   anchor:'Exodus 19:16–19; Exodus 20:1–17; Galatians 4:24–25; Hebrews 12:18–21',
+   summary:[
+     {k:'Core tension',v:'Law vs. Life'},
+     {k:'Theological identity',v:'Covenant constitution — the birth of Israel as a nation under God. The law is not a burden; it is a boundary that defines relationship. But Sinai alone cannot save. The golden calf is not an exception — it is the proof.'},
+     {k:'The pivot',v:'Sinai is the fifth node, the pivot between wilderness and conquest. It is not the destination; it is the constitution of the journey. The people carry the tablets to Kadesh, where they will fail. But the tablets remain.'},
+     {k:'NT trajectory',v:'Hebrews 12 contrasts Sinai (terror, fire, darkness, storm) with Zion (heavenly assembly, spirits of the righteous). Galatians 4 reads Sinai as Hagar — the covenant of bondage. The law points beyond itself to grace.'},
+   ],
+   scripture:[
+     {ref:'Exodus 19:16–19',note:'Thunder, lightning, thick cloud, trumpet blast — the theophany of Sinai; sensory overload is intentional: God is not a concept'},
+     {ref:'Exodus 20:1–17',note:'The Ten Commandments — relational law, binding community to God and to one another; architecture of shalom'},
+     {ref:'Exodus 32:1–4',note:'The golden calf — built while Moses is still on the mountain; the law\'s inadequacy to transform the heart proven immediately'},
+     {ref:'Hebrews 12:18–21',note:'"For you have not come to what may be touched, a blazing fire" — Sinai as the contrast to heavenly Zion'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-008: The Paran Scroll — previous node','SON-EDM-010: The Kadesh Scroll — next node','Sinai theophany — Exodus 19–24 exhaustive study','Hebrews 12 — Sinai vs. Zion contrast'],
+  },
+
+  {id:'SON-EDM-010',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Kadesh Scroll',subtitle:'Phase 2 · Threshold Decision · Node 6 of 17',
+   burden:'Indecision is a decision, and delay is often disobedience',
+   anchor:'Numbers 13–14; Numbers 20:1–13; Psalm 95:7–11; Hebrews 3:7–19',
+   summary:[
+     {k:'Core tension',v:'Decision vs. Delay'},
+     {k:'Theological identity',v:'The hinge between promise and refusal. The generation that saw the plagues, the Red Sea, the manna, and Sinai — cannot trust God for the land. Their failure is not intellectual but volitional. Kadesh is the crisis of faith.'},
+     {k:'Moses\' failure',v:'Numbers 20 — Moses strikes the rock twice instead of speaking to it. The water flows. But Moses is told he will not enter the land. Kadesh is the place where even the mediator fails. No one is exempt from the crisis of faith.'},
+     {k:'NT weight',v:'Psalm 95 and Hebrews 3–4 use Kadesh as the paradigmatic warning against hardening the heart. "Today, if you hear his voice, do not harden your hearts as at Meribah." Kadesh remains live ammunition in apostolic preaching.'},
+   ],
+   scripture:[
+     {ref:'Numbers 13:30',note:'"Let us go up at once and occupy it, for we are well able to overcome it" — Caleb\'s report; the good report is available but rejected'},
+     {ref:'Numbers 14:2–3',note:'"Would that we had died in Egypt! Or would that we had died in this wilderness!" — the generation chooses Egypt over Canaan'},
+     {ref:'Numbers 14:34',note:'"According to the number of the days in which you spied out the land, forty years, you shall bear your iniquity" — the sentence; delay becomes permanent consequence'},
+     {ref:'Numbers 20:11–12',note:'Moses strikes the rock; God responds: "Because you did not believe in me... you shall not bring this assembly into the land"'},
+     {ref:'Hebrews 3:7–8',note:'"Today, if you hear his voice, do not harden your hearts as in the rebellion, on the day of testing in the wilderness"'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-009: The Sinai Scroll — previous node','SON-EDM-011: The Hor Scroll — next node','Numbers 13–14 full exegesis — the spies and the bad report','Hebrews 3–4 — the Kadesh warning in apostolic theology'],
+  },
+
+  {id:'SON-EDM-011',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Hor Scroll',subtitle:'Phase 2 · Priestly Transfer · Node 7 of 17',
+   burden:'The work continues even when the worker is removed',
+   anchor:'Numbers 20:22–29; Numbers 33:37–41; Deuteronomy 32:50',
+   summary:[
+     {k:'Core tension',v:'Transfer vs. Termination'},
+     {k:'Theological identity',v:'The mountain of priestly succession. Aaron cannot enter the land. But the office does not die with him. The garments pass to Eleazar on the summit. The priesthood is a gift of God that transcends the individual.'},
+     {k:'The pattern established',v:'Deuteronomy 32:50 — Moses is told his death will mirror Aaron\'s. The dying leader pattern is established. It will recur. The point is not the man but the continuation of the mission.'},
+     {k:'Symbolic geography',v:'Hor is high, isolated, visible — a final pilgrimage mountain. Aaron leaves the camp, climbs with his brother and son, strips his vestments, breathes his last. The height symbolizes the elevation of the office being transferred.'},
+   ],
+   scripture:[
+     {ref:'Numbers 20:25–28',note:'"Strip Aaron of his garments and put them on Eleazar his son" — the transfer is visible, orderly, public; Aaron\'s death is a liturgy, not a scandal'},
+     {ref:'Numbers 20:29',note:'"When all the congregation saw that Aaron had perished, all the house of Israel wept for Aaron thirty days" — grief honored before the journey continues'},
+     {ref:'Deuteronomy 32:50',note:'"Die on the mountain... as Aaron your brother died on Mount Hor" — Moses\' death will mirror Aaron\'s; the pattern of the dying leader is established'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-010: The Kadesh Scroll — previous node','SON-EDM-012: The Petra Scroll — next node','Aaron\'s death — Numbers 20 full study','The high priesthood — transfer, succession, and typology'],
+  },
+
+  {id:'SON-EDM-012',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Petra Scroll',subtitle:'Phase 3 · Stone Cities · Node 8 of 17',
+   burden:'Beauty without covenant is a trap',
+   anchor:'Obadiah 1:3–4; Isaiah 34:6–7; 2 Kings 14:7',
+   summary:[
+     {k:'Core tension',v:'Beauty vs. Covenant'},
+     {k:'Theological identity',v:'The illusion of permanence carved into rock. Petra is breathtaking — rose-red sandstone, facades cut into cliffs, accessible only through the Siq. But the Edomites trusted their rock. "Who will bring me down?" The rock did not save them.'},
+     {k:'The spiritual trap',v:'Petra is not evil. It is a marvel of human engineering and natural beauty. The temptation is to look at Petra and say "This is permanent; this is security; this is salvation." The rock cannot save. Only the God who made the rock can save.'},
+     {k:'Phase 3 entry',v:'After Hor\'s transfer, the new generation moves through the legacy of Edom — Petra, Sela, Rekem, Maon. These are civilization without covenant. Beautiful, strong, and doomed.'},
+   ],
+   scripture:[
+     {ref:'Obadiah 1:3',note:'"You who dwell in the clefts of the rock, whose habitation is high, who say in your heart, \'Who will bring me down?\'" — Petra as the archetype of pride'},
+     {ref:'2 Kings 14:7',note:'"He took Sela by storm, and called it Joktheel" — the rock city can be taken; human pride is not invincible'},
+     {ref:'Isaiah 34:6',note:'"The sword of the LORD is filled with blood... for the LORD has a sacrifice in Bozrah" — the Edomite cities under prophetic judgment'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-011: The Hor Scroll — previous node','SON-EDM-013: The Sela Scroll — next node','Petra archaeological notes — Nabatean capital','Obadiah full scroll — the Edomite judgment oracle'],
+  },
+
+  {id:'SON-EDM-013',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Sela Scroll',subtitle:'Phase 3 · Stone Cities · Node 9 of 17',
+   burden:'God sees what is hidden. The name Sela is a reminder that no cleft is deep enough to escape the divine gaze.',
+   anchor:'2 Kings 14:7; Obadiah 1:3–4; Isaiah 42:11',
+   summary:[
+     {k:'Core tension',v:'Elevation vs. Humility'},
+     {k:'Theological identity',v:'Petra is the approach through the Siq — the beauty, the hiddenness. Sela is the summit, the high place, the perspective of God: "I will bring you down." Same location, different angle. The rock that conceals below is exposed above.'},
+     {k:'The redemptive exception',v:'Isaiah 42:11 — "Let the inhabitants of Sela sing, let them shout from the top of the mountains." The same rock that was judged for pride is invited to praise. Judgment does not permanently disqualify the geography.'},
+     {k:'Name meaning',v:'Sela (סֶלַע) — from sala\', to split, cleave. The split rock conceals from below but is exposed from above. God\'s perspective is the inversion of human perspective.'},
+   ],
+   scripture:[
+     {ref:'Obadiah 1:3–4',note:'"Though you soar aloft like the eagle, though your nest is set among the stars, from there I will bring you down" — the high place is not a refuge from God'},
+     {ref:'2 Kings 14:7',note:'"He took Sela by storm, and called it Joktheel [subdued by God]" — the unconquerable rock is conquered; the name change encodes the theology'},
+     {ref:'Isaiah 42:11',note:'"Let the inhabitants of Sela sing" — invitation to praise from the same height that was judged; redemption is possible for the humbled rock'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-012: The Petra Scroll — previous node','SON-EDM-014: The Rekem Scroll — next node','Obadiah full exegesis — pride, judgment, and Edomite desolation','Isaiah 42 and the singing of Sela — restoration theology'],
+  },
+
+  {id:'SON-EDM-014',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Rekem Scroll',subtitle:'Phase 3 · Stone Cities · Node 10 of 17',
+   burden:'Judgment does not erase a place — it repurposes it',
+   anchor:'Numbers 31:8; Joshua 13:21; Josephus, Antiquities 4.7.1',
+   summary:[
+     {k:'Core tension',v:'Commerce vs. Covenant'},
+     {k:'Theological identity',v:'The name beneath the names. The Nabateans called their city Raqmu. The Greeks called it Petra. The Hebrews called it Sela. Rekem is the indigenous name — what the city called itself. To use it is an act of respect.'},
+     {k:'Memory that survives judgment',v:'The new generation walking through the land must learn that it has a history that does not begin with them. They are not the first. They will not be the last. Rekem honors that prior memory.'},
+     {k:'Lexical note',v:'Rekem (רֶקֶם) — possibly from raqam, to embroider, variegate. The colorful sandstone city. The name celebrates the beauty of the rock without the judgment of pride. The commerce node in the EDM chain.'},
+   ],
+   scripture:[
+     {ref:'Numbers 31:8',note:'"They killed the kings of Midian... and Rekem" — Rekem as a Midianite king\'s name; the connection to the city is via Josephus'},
+     {ref:'Joshua 13:21',note:'Rekem listed among the Midianite kings — the name preserved in the canonical record'},
+   ],
+   apostolic:'Josephus (Antiquities 4.7.1): "The natives call it Rekem, but the Greeks call it Petra." The indigenous name outlasts empire. The Edomites are gone; the name Raqmu/Rekem remains in the rock.',
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-013: The Sela Scroll — previous node','SON-EDM-015: The Maon Scroll — next node','Nabatean civilization — the inheritors of Edom','The King\'s Highway — trade routes through Edomite territory'],
+  },
+
+  {id:'SON-EDM-015',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Maon Scroll',subtitle:'Phase 3 · Stone Cities · Node 11 of 17',
+   burden:'The cave is the school of trust',
+   anchor:'1 Samuel 23:24–28; 1 Samuel 25:2–3; Psalm 142',
+   summary:[
+     {k:'Core tension',v:'Hiddenness vs. Purpose'},
+     {k:'Theological identity',v:'The place where David hides and Saul hunts. The anointed one who has not yet received the throne. Hiddenness feels like purposelessness. But Maon is where the king is made — not by conquest but by restraint.'},
+     {k:'The narrow escape',v:'1 Samuel 23:24–28 — Saul is on one side of the ridge, David on the other. A messenger arrives, Saul breaks off the pursuit. The ridge is the width of a prayer.'},
+     {k:'Abigail',v:'1 Samuel 25 — Nabal of Maon refuses provision; Abigail intervenes. Maon is the place of provision refused and wisdom offered. The hunted king learns to receive help from unexpected sources.'},
+     {k:'Name meaning',v:'Maon (מָעוֹן) — dwelling, habitation, refuge. Used for a den of wild animals (Psalm 104:22) and for God\'s dwelling (Psalm 90:1). A dwelling that is not permanent, a refuge that is not a fortress.'},
+   ],
+   scripture:[
+     {ref:'1 Samuel 23:24–28',note:'David and Saul on opposite sides of a ridge — the narrow escape; divine timing as the only shield'},
+     {ref:'1 Samuel 25:2–3',note:'"A man in Maon whose business was in Carmel... his name was Nabal" — provision refused; wisdom (Abigail) intervenes'},
+     {ref:'Psalm 142',note:'"I cry aloud to the Lord... You are my refuge, my portion in the land of the living" — the psalm from the cave; Maon as the school of desperate prayer'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-014: The Rekem Scroll — previous node','SON-EDM-016: The Zered Scroll — next node','David in the wilderness — the formation of the anointed king','Psalm 142 — cave theology and desperate prayer'],
+  },
+
+  {id:'SON-EDM-016',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Zered Scroll',subtitle:'Phase 4 · River Crossings · Node 12 of 17',
+   burden:'Grace does not erase natural consequence — it carries the next generation forward',
+   anchor:'Numbers 21:12; Deuteronomy 2:13–15',
+   summary:[
+     {k:'Core tension',v:'Generation vs. Transition'},
+     {k:'Theological identity',v:'Zered is not a river — it is the boundary that ends an era. Deuteronomy 2:14: "The time from our leaving Kadesh-barnea until we crossed the Zered was thirty-eight years, until all the generation of the men of war had perished." The crossing is unremarkable. The death it marks is everything.'},
+     {k:'The sentence executed',v:'God forgave Israel at Kadesh (Numbers 14:20). But the consequence remained. Zered is where that consequence is finally, fully executed. The old must die for the new to enter.'},
+     {k:'Rhythm note',v:'This is a thin scroll. You cross Zered fast. You don\'t linger. The people do not fight here; they simply pass through. The enemy is not Edom or Moab — it is the past itself.'},
+   ],
+   scripture:[
+     {ref:'Numbers 21:12',note:'"From there they set out and camped on the other side of the Zered" — the crossing is unremarkable; the focus is the transition, not the miracle'},
+     {ref:'Deuteronomy 2:13–14',note:'"Now rise up and go over the Zered... thirty-eight years... until all the generation of the men of war had perished" — the verse that defines the node'},
+     {ref:'Deuteronomy 2:15',note:'"For indeed the hand of the LORD was against them, to destroy them from the camp, until they had perished" — the death of the generation is divine, not natural'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-015: The Maon Scroll — previous node','SON-EDM-017: The Arnon Scroll — next node','The forty years — Numbers 14 and the Kadesh sentence','Wadi al-Hasa — geography of the Zered crossing'],
+  },
+
+  {id:'SON-EDM-017',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Arnon Scroll',subtitle:'Phase 4 · River Crossings · Node 13 of 17',
+   burden:'The boundary that divides is also the boundary that, once crossed, becomes a new possession',
+   anchor:'Numbers 21:13–14; Numbers 21:21–26; Deuteronomy 2:24',
+   summary:[
+     {k:'Core tension',v:'Boundary vs. Movement'},
+     {k:'Theological identity',v:'The first conquest. The new generation has never fought a battle. At Arnon, for the first time in forty years, Israel goes to war. And wins. The canyon that could have been a grave becomes a gateway.'},
+     {k:'The sequence',v:'After Zered (death), Arnon is the first battle. The pattern: bury the past, then fight for the future. The new generation must not only mourn the old — they must move.'},
+     {k:'Geography',v:'Wadi al-Mujib — one of the largest canyons in the world, walls up to 500 meters, flowing into the Dead Sea. A natural barrier, virtually impassable except at specific fords. The crossing is a decisive act of faith.'},
+   ],
+   scripture:[
+     {ref:'Numbers 21:13',note:'"They camped on the other side of the Arnon, which is in the wilderness that extends from the border of the Amorites" — the Arnon as explicit boundary'},
+     {ref:'Numbers 21:21–26',note:'Israel requests passage; Sihon refuses and attacks; Israel defeats him. The war is defensive — Sihon is given the opportunity to let Israel pass peacefully.'},
+     {ref:'Deuteronomy 2:24',note:'"Rise up, take your journey, and pass over the river Arnon. Behold, I have given into your hand Sihon the Amorite... begin to take possession" — the command that opens Phase 4'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-016: The Zered Scroll — previous node','SON-EDM-018: The Jabbok Scroll — next node','Sihon king of Heshbon — the first Amorite defeat','Wadi al-Mujib — the Arnon canyon archaeological context'],
+  },
+
+  {id:'SON-EDM-018',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Jabbok Scroll',subtitle:'Phase 4 · River Crossings · Node 14 of 17',
+   burden:'The prayer that prevails is not the prayer of the strong — it is the prayer of the wounded',
+   anchor:'Genesis 32:22–32',
+   summary:[
+     {k:'Core tension',v:'Wrestling vs. Yielding'},
+     {k:'Theological identity',v:'Jabbok is not a stream — it is the place where the self is broken and renamed. Jacob sends his family across and stays behind. In the dark, a man wrestles with him until dawn. Jacob\'s hip is wrenched. He refuses to let go. He receives a new name: Israel.'},
+     {k:'The wound',v:'Jacob does not defeat the stranger. He holds on, and the stranger touches him, and he is changed. He does not win — he limps. The limp is the mark of blessing. Jabbok teaches that the prayer that prevails is not the prayer of the strong.'},
+     {k:'Name meaning',v:'Jabbok (יַבֹּק) — from baqaq, to empty, to pour out. The place where Jacob was emptied of his old self. The back-and-forth crossing suggests a threshold that cannot be crossed easily.'},
+   ],
+   scripture:[
+     {ref:'Genesis 32:24',note:'"And Jacob was left alone. And a man wrestled with him until the breaking of the day" — alone, at night, at the ford; the conditions of the real encounter'},
+     {ref:'Genesis 32:28',note:'"Your name shall no longer be called Jacob, but Israel, for you have striven with God and with men, and have prevailed" — the new name encodes the wound and the blessing together'},
+     {ref:'Genesis 32:31',note:'"The sun rose upon him as he passed Penuel, limping because of his thigh" — the limp as the visible sign of divine touch; Jacob\'s body bears the mark'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-017: The Arnon Scroll — previous node','SON-EDM-019: The Yarmuk Scroll — next node','Genesis 32 full exegesis — the night wrestling at Penuel','Israel the name — wrestling, prevailing, and the new identity'],
+  },
+
+  {id:'SON-EDM-019',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Yarmuk Scroll',subtitle:'Phase 4 · River Crossings · Node 15 of 17',
+   burden:'The land is a gift, but the community is the covenant',
+   anchor:'Numbers 32:1–5; Numbers 32:6–15; Joshua 1:12–15; Joshua 22:1–6',
+   summary:[
+     {k:'Core tension',v:'Memory vs. Movement'},
+     {k:'Theological identity',v:'The place of the forgotten commitment. The half-tribes received good land east of the Jordan. But they agreed to cross the Jordan armed to fight for their brothers until the western land was conquered. Yarmuk is the agreement made before the crossing.'},
+     {k:'The theological claim',v:'The land is not the goal — the people of God are the goal. The land is a gift, but the community is the covenant. To stay in comfortable possession while brothers fight is to break the covenant even while keeping the land.'},
+     {k:'Rhythm note',v:'Yarmuk is thin — a river of decision, not of miracle. No parting of waters, no wrestling, no conquest song. Just the question: will you cross for your brothers? Decisions are easily forgotten. The scroll is brief because the decision must be made, not studied.'},
+   ],
+   scripture:[
+     {ref:'Numbers 32:6',note:'"Shall your brothers go to the war while you sit here?" — Moses\' rebuke; the cost of comfortable possession'},
+     {ref:'Numbers 32:21',note:'"Every man of you armed shall cross the Jordan before the LORD until he has driven out his enemies" — the condition of the inheritance east of the Jordan'},
+     {ref:'Joshua 22:4',note:'"Now the LORD your God has given rest to your brothers... return to your tents, to the land where your possession lies" — the half-tribes released after fulfilling the vow'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-018: The Jabbok Scroll — previous node','SON-EDM-020: The Jordan Scroll — next node','Numbers 32 — the half-tribe request and the condition','Joshua 22 — the return of the half-tribes and the altar controversy'],
+  },
+
+  {id:'SON-EDM-020',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Jordan Scroll',subtitle:'Phase 4 · River Crossings · Node 16 of 17',
+   burden:'God does not remove obstacles until His people move toward them',
+   anchor:'Joshua 3:1–17; Joshua 4:1–9; Romans 6:3–4',
+   summary:[
+     {k:'Core tension',v:'Promise vs. Entry'},
+     {k:'Theological identity',v:'Jordan is the threshold where forty years of wandering become a single step of faith. The river is at flood stage. The priests step in first. The water stops. Israel crosses on dry ground. For the second time in a generation, a parted sea.'},
+     {k:'The conditional miracle',v:'The waters do not part until the priests\' sandals are wet. The promise is not automatic — it requires the step of faith. Jordan teaches that God does not remove obstacles until His people move toward them.'},
+     {k:'Symbolic geography',v:'Yarden (יַרְדֵּן) — from yarad, to descend. The river goes down, down, down — from Hermon\'s springs to the Dead Sea, the lowest river on earth. Yet at its lowest, it is the place of crossing. Baptism in the Jordan is descent into death and rising to new life.'},
+   ],
+   scripture:[
+     {ref:'Joshua 3:13',note:'"And when the soles of the feet of the priests bearing the ark of the LORD... shall rest in the waters of the Jordan, the waters of the Jordan shall be cut off" — the miracle is conditional on the step'},
+     {ref:'Joshua 3:17',note:'"And the priests bearing the ark of the covenant of the LORD stood firm on dry ground in the midst of the Jordan, and all Israel was passing over on dry ground" — the crossing on dry ground; the Red Sea repeated'},
+     {ref:'Joshua 4:6–7',note:'Twelve stones from the Jordan — memorial for future generations; "when your children ask in time to come, \'What do those stones mean?\'"'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-019: The Yarmuk Scroll — previous node','SON-EDM-021: The Hermon Scroll — the crown','Joshua 3–4 full study — the Jordan crossing theology','Baptism and the Jordan — NT typology of descent and rising'],
+  },
+
+  {id:'SON-EDM-021',type:'SCROLL',collection:'EDM',access:'free',
+   title:'The Hermon Scroll',subtitle:'The Crown Node · Node 17 of 17',
+   burden:'The journey was never about the places — it was about the One who speaks',
+   anchor:'Matthew 17:1–8; Mark 9:2–8; Psalm 133:3; 2 Peter 1:17–18',
+   summary:[
+     {k:'Core tension',v:'Fullness vs. Finality'},
+     {k:'Theological identity',v:'Hermon is not a mountain — it is the place where the entire chain is transfigured. After Jordan (the final crossing), the chain moves to the highest peak, the northern boundary of the promise. Here, Jesus is transfigured. Moses and Elijah appear. A voice from the cloud: "This is my beloved Son — listen to him."'},
+     {k:'The crown logic',v:'Seir was possession without covenant. Teman was wisdom without love. Bozrah was strength without surrender. Paran was the stripping of walls. Sinai gave the law. Kadesh forced the decision. Hor transferred the office. The stone cities showed beauty that cannot save. The rivers asked for the step. Hermon gathers them all into one voice.'},
+     {k:'Peter\'s mistake',v:'Peter wants to build three tents and stay. The cloud lifts. They go back down. The mountaintop was never the destination. It was the source of the descent. Hermon teaches that the fullness of revelation cannot be captured — it must be carried back down to the valley.'},
+     {k:'Rhythm note',v:'This scroll is short. Everything that needed to be said was said in the journey. The voice from the cloud only said five words. The scroll stops because the chain stops.'},
+   ],
+   scripture:[
+     {ref:'Matthew 17:2',note:'"And he was transfigured before them, and his face shone like the sun, and his clothes became white as light" — the glory concealed through the entire journey, revealed at the crown'},
+     {ref:'Matthew 17:5',note:'"This is my beloved Son, with whom I am well pleased; listen to him" — five words; the chain\'s final word; the journey resolves in a voice, not a conquest'},
+     {ref:'Matthew 17:9',note:'"And as they were coming down the mountain..." — the descent is the commission; revelation is the source of return, not escape'},
+     {ref:'Psalm 133:3',note:'"Like the dew of Hermon, which falls on the mountains of Zion" — Hermon as the source of blessing that flows down; what descends from the mountain waters the covenant land'},
+     {ref:'2 Peter 1:17–18',note:'"For when he received honor and glory from God the Father, and the voice was borne to him by the Majestic Glory... we ourselves heard this very voice borne from heaven, for we were with him on the holy mountain"'},
+   ],
+   tabs:['summary','scripture'],
+   triggers:['SON-EDM-020: The Jordan Scroll — previous node','SON-EDM-001: Return to series introduction','The Transfiguration — Matthew 17 full exegesis','1 Enoch and Hermon — the mountain of the Watchers in Second Temple tradition'],
+  },
+
   // ── SCROLLS ──
   {id:'VEL-001',type:'SCROLL',collection:'VEL',access:'free',
    title:'The Scroll of the Hidden Name',subtitle:'Concealment and Disclosure in the Divine Self-Identification',
@@ -617,6 +1004,7 @@ function matchEntry(e) {
     if(f === 'VEL' && e.collection === 'VEL') return true;
     if(f === 'ZION' && e.collection === 'ZION') return true;
     if(f === 'WAT' && e.collection === 'WAT') return true;
+    if(f === 'EDM' && e.collection === 'EDM') return true;
   }
   return false;
 }
