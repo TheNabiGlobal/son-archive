@@ -1200,9 +1200,10 @@ function tagHtml(tags) {
 
 function renderEntry(e) {
   const ev = document.getElementById('entry-view');
-  const colName = COLLECTIONS[e.collection]?.name || e.collection;
-  const colColor = getColColor(e.collection);
-  const colPale = getColPale(e.collection);
+  const coll = e.collection || e.col || '';
+  const colName = COLLECTIONS[coll]?.name || coll;
+  const colColor = getColColor(coll);
+  const colPale = getColPale(coll);
   const accessBadge = e.access==='free'
     ? `<span class="e-access" style="background:var(--teal-pale);color:var(--teal)">Free access</span>`
     : e.access==='member'
@@ -1258,13 +1259,13 @@ function buildSummaryCards(e) {
     </div>`;
   if(e.type === 'SCROLL') return `
     <div class="e-summary">
-      <div class="sc sc-scroll"><div class="sc-lbl">Output type</div><div class="sc-val">Scroll</div><div class="sc-sub">${e.collection} collection</div></div>
+      <div class="sc sc-scroll"><div class="sc-lbl">Output type</div><div class="sc-val">Scroll</div><div class="sc-sub">${e.collection||e.col} collection</div></div>
       ${e.anchor?`<div class="sc sc-scrip"><div class="sc-lbl">Primary anchor</div><div class="sc-val" style="font-family:var(--fm);font-size:10px;line-height:1.4">${e.anchor}</div></div>`:''}
       <div class="sc sc-tier"><div class="sc-lbl">Access</div><div class="sc-val">${e.access==='free'?'Open access':'Paid scroll'}</div></div>
     </div>`;
   if(e.type === 'STU') return `
     <div class="e-summary">
-      <div class="sc sc-col"><div class="sc-lbl">Output type</div><div class="sc-val">Study series</div><div class="sc-sub">${e.collection} collection</div></div>
+      <div class="sc sc-col"><div class="sc-lbl">Output type</div><div class="sc-val">Study series</div><div class="sc-sub">${e.collection||e.col} collection</div></div>
       ${e.anchor?`<div class="sc sc-scrip"><div class="sc-lbl">Primary anchor</div><div class="sc-val" style="font-family:var(--fm);font-size:10px;line-height:1.4">${e.anchor}</div></div>`:''}
     </div>`;
   return `<div class="e-summary"><div class="sc sc-tier"><div class="sc-lbl">Type</div><div class="sc-val">${e.type}</div></div></div>`;
@@ -1356,7 +1357,7 @@ function buildObtain(e) {
   if(e.access === 'free') {
     return `<div class="obtain-panel">
       <div><div class="op-free">Open access — no cost</div><div class="op-desc">This scroll is freely available. Read, share, and study freely.</div></div>
-      <button class="op-btn free">Read full scroll</button>
+      ${e.link?`<button class="op-btn free" onclick="window.open('${e.link}','_blank')">Read full scroll</button>`:''}
     </div>`;
   }
   if(e.access === 'member') {
@@ -1368,7 +1369,7 @@ function buildObtain(e) {
   return `<div class="obtain-panel">
     <div><div class="op-price">$${e.price}</div><div class="op-desc">Full PDF · immediate delivery · permanent access</div></div>
     <div style="display:flex;gap:8px;align-items:center">
-      <button class="op-btn" onclick="alert('Connect your Gumroad or Stripe link here for: '+('${e.id}'))">Obtain this scroll</button>
+      ${e.stripeLink?`<button class="op-btn" onclick="window.open('${e.stripeLink}','_blank')">Obtain this scroll</button>`:`<button class="op-btn" onclick="window.open('${e.link||'#'}','_blank')">Obtain this scroll</button>`}
     </div>
   </div>`;
 }
