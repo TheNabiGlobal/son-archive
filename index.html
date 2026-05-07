@@ -257,6 +257,7 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
     <button class="fc" onclick="tf('WAT')">WAT</button>
     <button class="fc" onclick="tf('WP')">World Papers</button>
     <button class="fc" style="border-color:var(--crimson);color:var(--crimson)" onclick="tf('EDM')">Edom Threshold</button>
+    <button class="fc" style="border-color:var(--gold);color:var(--gold)" onclick="tf('BSR')">Before the Sun Rises</button>
   </div>
   <div class="sb-list" id="sb-list"></div>
 </aside>
@@ -280,6 +281,16 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           <button class="hcta primary" style="background:var(--crimson);border-color:var(--crimson);color:#fff" onclick="selectEntry('SON-EDM-001')">Begin with Seir &rarr;</button>
           <button class="hcta" onclick="tf('EDM')">Browse all 18 scrolls</button>
+        </div>
+      </div>
+      <div style="border:1px solid var(--gold);background:var(--gold-pale);padding:14px 16px;margin-bottom:1.25rem">
+        <div style="font-family:var(--fm);font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">New series · May 2026</div>
+        <div style="font-family:var(--fd);font-size:16px;font-weight:500;color:#5a3a00;margin-bottom:4px">Before the Sun Rises</div>
+        <div style="font-family:var(--fb);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:10px">Ten volumes on the pattern all cultures saw and only one preserved</div>
+        <div style="font-family:var(--fb);font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:12px">Every culture tracked the sunrise. Egypt built temples to it. Babylon mapped it. Pythagoras heard its music. One people was given the name of the one who commissioned it — and forgot to teach why it mattered.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="hcta primary" style="background:var(--gold);border-color:var(--gold);color:#fff" onclick="selectEntry('SON-BSR-001')">Begin with The Morning &rarr;</button>
+          <button class="hcta" onclick="tf('BSR')">Browse all 10 volumes</button>
         </div>
       </div>
       <div class="home-collections" id="home-cols"></div>
@@ -308,6 +319,7 @@ const COLLECTIONS = {
   WP:{name:'World Papers',desc:'Prophetic-geopolitical monographs and expanded studies',color:'var(--gold)',pale:'var(--gold-pale)'},
   COS:{name:'Cosmos Studies',desc:'Creation, cosmology, and the structure of the ages',color:'var(--ink-mid)',pale:'var(--parch-mid)'},
   EDM:{name:'Edom Threshold Series',desc:'A pilgrim theology in 18 scrolls — Seir to Hermon',color:'var(--crimson)',pale:'var(--crim-pale)'},
+  BSR:{name:'Before the Sun Rises',desc:'Ten volumes on the pattern all cultures saw and only one preserved',color:'var(--gold)',pale:'var(--gold-pale)'},
 };
 
 const TYPE_COLOR = {
@@ -319,7 +331,7 @@ const ENTRIES = [
 
   // ── EDOM THRESHOLD SERIES (SON-EDM-001 through 021) ──
 
-  {id:'SON-EDM-001',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-001',type:'SCROLL',collection:'EDM',access:'free',bundleLink:'https://buy.stripe.com/00w5kE1hSgpZ7t63D557W0d',bundleLabel:'Get all 17 scrolls — $149',
    title:'The Edom Threshold — Series Introduction',subtitle:'A pilgrim\'s theology in 18 scrolls',
    burden:'You do not start at the promise. You start at Seir.',
    anchor:'Deuteronomy 2:5; Judges 5:4; Matthew 17:5',
@@ -353,7 +365,7 @@ const ENTRIES = [
    triggers:['SON-EDM-004: The Seir Scroll — begin here','SON-EDM-021: The Hermon Scroll — the crown','Browse all 18 scrolls in this series'],
   },
 
-  {id:'SON-EDM-004',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-004',type:'SCROLL',collection:'EDM',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    title:'The Seir Scroll',subtitle:'Phase 1 · Possession · Node 1 of 17',
    burden:'Seir is what a man holds before he has become worthy of holding it',
    anchor:'Genesis 36:8; Deuteronomy 2:5; Ezekiel 35; Obadiah 1:3',
@@ -376,7 +388,7 @@ const ENTRIES = [
    triggers:['SON-EDM-006: The Teman Scroll — next node','SON-EDM-001: Series Introduction','The Horites — pre-Edomite inhabitants of Seir','Ezekiel 35 full oracle against Mount Seir'],
   },
 
-  {id:'SON-EDM-006',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-006',type:'SCROLL',collection:'EDM',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    title:'The Teman Scroll',subtitle:'Phase 1 · Justification · Node 2 of 17',
    burden:'Teman is what a man builds to justify his inheritance — but if he does not bleed, his building becomes an accusation',
    anchor:'Job 2:11; Job 42:7; Jeremiah 49:7; Habakkuk 3:3',
@@ -397,7 +409,7 @@ const ENTRIES = [
    triggers:['SON-EDM-004: The Seir Scroll — previous node','SON-EDM-007: The Bozrah Scroll — next node','Eliphaz the Temanite — full exegesis of Job 4–5, 15, 22','The older brother in Luke 15 — Teman pattern in the NT'],
   },
 
-  {id:'SON-EDM-007',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-007',type:'SCROLL',collection:'EDM',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    title:'The Bozrah Scroll',subtitle:'Phase 1 · Fortification · Node 3 of 17',
    burden:'Bozrah is what a man builds to keep his inheritance safe — but if he does not open the gates, the inheritance becomes a tomb',
    anchor:'Isaiah 34:6; Isaiah 63:1; Amos 1:12; Micah 2:12',
@@ -417,7 +429,7 @@ const ENTRIES = [
    triggers:['SON-EDM-006: The Teman Scroll — previous node','SON-EDM-008: The Paran Scroll — next node','Isaiah 63 — the divine warrior from Bozrah','Buseirah excavations — Iron Age Edomite capital'],
   },
 
-  {id:'SON-EDM-008',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-008',type:'SCROLL',collection:'EDM',access:'paid',price:15,stripeLink:'https://buy.stripe.com/fZu7sM5y8ehR7t6b5x57W08',
    title:'The Paran Scroll',subtitle:'Phase 1 · Wilderness Exposure · Node 4 of 17',
    burden:'Paran is the place where walls become sand',
    anchor:'Genesis 21:21; Numbers 10:12; Deuteronomy 33:2; Habakkuk 3:3',
@@ -437,7 +449,7 @@ const ENTRIES = [
    triggers:['SON-EDM-007: The Bozrah Scroll — previous node','SON-EDM-009: The Sinai Scroll — next node','The southern theophanic corridor — Seir, Paran, Teman, Sinai','Ishmael in Paran — the rejected son theology'],
   },
 
-  {id:'SON-EDM-009',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-009',type:'SCROLL',collection:'EDM',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    title:'The Sinai Scroll',subtitle:'Phase 2 · Covenant Confrontation · Node 5 of 17',
    burden:'Sinai is not a mountain — it is the collision between divine holiness and human exposure',
    anchor:'Exodus 19:16–19; Exodus 20:1–17; Galatians 4:24–25; Hebrews 12:18–21',
@@ -457,7 +469,7 @@ const ENTRIES = [
    triggers:['SON-EDM-008: The Paran Scroll — previous node','SON-EDM-010: The Kadesh Scroll — next node','Sinai theophany — Exodus 19–24 exhaustive study','Hebrews 12 — Sinai vs. Zion contrast'],
   },
 
-  {id:'SON-EDM-010',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-010',type:'SCROLL',collection:'EDM',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    title:'The Kadesh Scroll',subtitle:'Phase 2 · Threshold Decision · Node 6 of 17',
    burden:'Indecision is a decision, and delay is often disobedience',
    anchor:'Numbers 13–14; Numbers 20:1–13; Psalm 95:7–11; Hebrews 3:7–19',
@@ -478,7 +490,7 @@ const ENTRIES = [
    triggers:['SON-EDM-009: The Sinai Scroll — previous node','SON-EDM-011: The Hor Scroll — next node','Numbers 13–14 full exegesis — the spies and the bad report','Hebrews 3–4 — the Kadesh warning in apostolic theology'],
   },
 
-  {id:'SON-EDM-011',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-011',type:'SCROLL',collection:'EDM',access:'paid',price:15,stripeLink:'https://buy.stripe.com/fZu7sM5y8ehR7t6b5x57W08',
    title:'The Hor Scroll',subtitle:'Phase 2 · Priestly Transfer · Node 7 of 17',
    burden:'The work continues even when the worker is removed',
    anchor:'Numbers 20:22–29; Numbers 33:37–41; Deuteronomy 32:50',
@@ -497,7 +509,7 @@ const ENTRIES = [
    triggers:['SON-EDM-010: The Kadesh Scroll — previous node','SON-EDM-012: The Petra Scroll — next node','Aaron\'s death — Numbers 20 full study','The high priesthood — transfer, succession, and typology'],
   },
 
-  {id:'SON-EDM-012',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-012',type:'SCROLL',collection:'EDM',access:'paid',price:15,stripeLink:'https://buy.stripe.com/fZu7sM5y8ehR7t6b5x57W08',
    title:'The Petra Scroll',subtitle:'Phase 3 · Stone Cities · Node 8 of 17',
    burden:'Beauty without covenant is a trap',
    anchor:'Obadiah 1:3–4; Isaiah 34:6–7; 2 Kings 14:7',
@@ -516,7 +528,7 @@ const ENTRIES = [
    triggers:['SON-EDM-011: The Hor Scroll — previous node','SON-EDM-013: The Sela Scroll — next node','Petra archaeological notes — Nabatean capital','Obadiah full scroll — the Edomite judgment oracle'],
   },
 
-  {id:'SON-EDM-013',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-013',type:'SCROLL',collection:'EDM',access:'paid',price:12,stripeLink:'https://buy.stripe.com/28E14o3q0ehR28M2z157W09',
    title:'The Sela Scroll',subtitle:'Phase 3 · Stone Cities · Node 9 of 17',
    burden:'God sees what is hidden. The name Sela is a reminder that no cleft is deep enough to escape the divine gaze.',
    anchor:'2 Kings 14:7; Obadiah 1:3–4; Isaiah 42:11',
@@ -535,7 +547,7 @@ const ENTRIES = [
    triggers:['SON-EDM-012: The Petra Scroll — previous node','SON-EDM-014: The Rekem Scroll — next node','Obadiah full exegesis — pride, judgment, and Edomite desolation','Isaiah 42 and the singing of Sela — restoration theology'],
   },
 
-  {id:'SON-EDM-014',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-014',type:'SCROLL',collection:'EDM',access:'paid',price:12,stripeLink:'https://buy.stripe.com/28E14o3q0ehR28M2z157W09',
    title:'The Rekem Scroll',subtitle:'Phase 3 · Stone Cities · Node 10 of 17',
    burden:'Judgment does not erase a place — it repurposes it',
    anchor:'Numbers 31:8; Joshua 13:21; Josephus, Antiquities 4.7.1',
@@ -554,7 +566,7 @@ const ENTRIES = [
    triggers:['SON-EDM-013: The Sela Scroll — previous node','SON-EDM-015: The Maon Scroll — next node','Nabatean civilization — the inheritors of Edom','The King\'s Highway — trade routes through Edomite territory'],
   },
 
-  {id:'SON-EDM-015',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-015',type:'SCROLL',collection:'EDM',access:'paid',price:12,stripeLink:'https://buy.stripe.com/28E14o3q0ehR28M2z157W09',
    title:'The Maon Scroll',subtitle:'Phase 3 · Stone Cities · Node 11 of 17',
    burden:'The cave is the school of trust',
    anchor:'1 Samuel 23:24–28; 1 Samuel 25:2–3; Psalm 142',
@@ -574,7 +586,7 @@ const ENTRIES = [
    triggers:['SON-EDM-014: The Rekem Scroll — previous node','SON-EDM-016: The Zered Scroll — next node','David in the wilderness — the formation of the anointed king','Psalm 142 — cave theology and desperate prayer'],
   },
 
-  {id:'SON-EDM-016',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-016',type:'SCROLL',collection:'EDM',access:'paid',price:10,stripeLink:'https://buy.stripe.com/aFabJ2f8IehR7t6flN57W0a',
    title:'The Zered Scroll',subtitle:'Phase 4 · River Crossings · Node 12 of 17',
    burden:'Grace does not erase natural consequence — it carries the next generation forward',
    anchor:'Numbers 21:12; Deuteronomy 2:13–15',
@@ -593,7 +605,7 @@ const ENTRIES = [
    triggers:['SON-EDM-015: The Maon Scroll — previous node','SON-EDM-017: The Arnon Scroll — next node','The forty years — Numbers 14 and the Kadesh sentence','Wadi al-Hasa — geography of the Zered crossing'],
   },
 
-  {id:'SON-EDM-017',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-017',type:'SCROLL',collection:'EDM',access:'paid',price:10,stripeLink:'https://buy.stripe.com/aFabJ2f8IehR7t6flN57W0a',
    title:'The Arnon Scroll',subtitle:'Phase 4 · River Crossings · Node 13 of 17',
    burden:'The boundary that divides is also the boundary that, once crossed, becomes a new possession',
    anchor:'Numbers 21:13–14; Numbers 21:21–26; Deuteronomy 2:24',
@@ -612,7 +624,7 @@ const ENTRIES = [
    triggers:['SON-EDM-016: The Zered Scroll — previous node','SON-EDM-018: The Jabbok Scroll — next node','Sihon king of Heshbon — the first Amorite defeat','Wadi al-Mujib — the Arnon canyon archaeological context'],
   },
 
-  {id:'SON-EDM-018',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-018',type:'SCROLL',collection:'EDM',access:'paid',price:12,stripeLink:'https://buy.stripe.com/28E14o3q0ehR28M2z157W09',
    title:'The Jabbok Scroll',subtitle:'Phase 4 · River Crossings · Node 14 of 17',
    burden:'The prayer that prevails is not the prayer of the strong — it is the prayer of the wounded',
    anchor:'Genesis 32:22–32',
@@ -631,7 +643,7 @@ const ENTRIES = [
    triggers:['SON-EDM-017: The Arnon Scroll — previous node','SON-EDM-019: The Yarmuk Scroll — next node','Genesis 32 full exegesis — the night wrestling at Penuel','Israel the name — wrestling, prevailing, and the new identity'],
   },
 
-  {id:'SON-EDM-019',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-019',type:'SCROLL',collection:'EDM',access:'paid',price:10,stripeLink:'https://buy.stripe.com/aFabJ2f8IehR7t6flN57W0a',
    title:'The Yarmuk Scroll',subtitle:'Phase 4 · River Crossings · Node 15 of 17',
    burden:'The land is a gift, but the community is the covenant',
    anchor:'Numbers 32:1–5; Numbers 32:6–15; Joshua 1:12–15; Joshua 22:1–6',
@@ -650,7 +662,7 @@ const ENTRIES = [
    triggers:['SON-EDM-018: The Jabbok Scroll — previous node','SON-EDM-020: The Jordan Scroll — next node','Numbers 32 — the half-tribe request and the condition','Joshua 22 — the return of the half-tribes and the altar controversy'],
   },
 
-  {id:'SON-EDM-020',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-020',type:'SCROLL',collection:'EDM',access:'paid',price:12,stripeLink:'https://buy.stripe.com/28E14o3q0ehR28M2z157W09',
    title:'The Jordan Scroll',subtitle:'Phase 4 · River Crossings · Node 16 of 17',
    burden:'God does not remove obstacles until His people move toward them',
    anchor:'Joshua 3:1–17; Joshua 4:1–9; Romans 6:3–4',
@@ -669,7 +681,7 @@ const ENTRIES = [
    triggers:['SON-EDM-019: The Yarmuk Scroll — previous node','SON-EDM-021: The Hermon Scroll — the crown','Joshua 3–4 full study — the Jordan crossing theology','Baptism and the Jordan — NT typology of descent and rising'],
   },
 
-  {id:'SON-EDM-021',type:'SCROLL',collection:'EDM',access:'free',
+  {id:'SON-EDM-021',type:'SCROLL',collection:'EDM',access:'paid',price:15,stripeLink:'https://buy.stripe.com/fZu7sM5y8ehR7t6b5x57W08',
    title:'The Hermon Scroll',subtitle:'The Crown Node · Node 17 of 17',
    burden:'The journey was never about the places — it was about the One who speaks',
    anchor:'Matthew 17:1–8; Mark 9:2–8; Psalm 133:3; 2 Peter 1:17–18',
@@ -690,6 +702,116 @@ const ENTRIES = [
    tabs:['summary','scripture'],
    triggers:['SON-EDM-020: The Jordan Scroll — previous node','SON-EDM-001: Return to series introduction','The Transfiguration — Matthew 17 full exegesis','1 Enoch and Hermon — the mountain of the Watchers in Second Temple tradition'],
   },
+
+  // ── BEFORE THE SUN RISES SERIES (SON-BSR-001 through 010) ──
+  {id:'SON-BSR-001',col:'BSR',type:'SCROLL',bundleLink:'https://buy.stripe.com/00w5kE1hSgpZ7t63D557W0d',bundleLabel:'Get all 10 volumes — $149',
+   title:'Before the Sun Rises — Vol. 1: The Morning',subtitle:'The morning is not a time of day — it is a governance structure',
+   anchor:'Exodus 16:21 · Lamentations 3:22–23 · 2 Peter 1:19',
+   tags:['Night','Star','Gathering','Covenant Window','Darkness Before Light'],
+   tension:'Gathering vs. Storing',
+   summary:'Volume 1 of 10 — the free on-ramp. Night · Star · Gathering · Exposure · Return. Recovers the morning as a covenant window, not a devotional habit. From the evening-and-morning structure of Genesis 1 through the manna law to the resurrection morning that ends all mornings.',
+   access:'free',price:0,
+   access:'free',price:0,
+   nav:'SON-BSR-002'},
+
+  {id:'SON-BSR-002',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 2: The Sun',subtitle:'Six functions of the sun embedded in the created order',
+   anchor:'Psalm 19:6 · Psalm 84:11 · Malachi 4:2',
+   tags:['Ruler','Tester','Revealer','Covenant Enforcer','Healer','Witness'],
+   tension:'Instrument vs. Source',
+   summary:'Volume 2 of 10. The sun does not merely provide light — it rules, tests, reveals, enforces covenant deadlines, heals those who gathered properly, and witnesses daily to the character of the one who commissioned it. Every culture saw these six functions. Most stopped at the instrument.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/15XHEN2S_T_QoSH5eyujanBYamSlZ1Iwwi7MGJWt50KY/edit',
+   nav:'SON-BSR-003'},
+
+  {id:'SON-BSR-003',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 3: The Moon',subtitle:'The lesser light governs the night by borrowed radiance',
+   anchor:'Psalm 89:37 · Psalm 104:19 · Revelation 12:1',
+   tags:['Witness','Covenant Seasons','Israel Autobiography','Night Governor','Faithful Reflection'],
+   tension:'Generating vs. Reflecting',
+   summary:'Volume 3 of 10. The moon rules the night with light it does not possess — and this single fact makes it the most precise image of what a covenant people is called to be in the darkness of this age. Traces six theological registers of the moon from Genesis through Revelation.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1hhZPDwVwM8Hk0ky8zNshq0yOSXb38eKLP7QeOZzh6nM/edit',
+   nav:'SON-BSR-004'},
+
+  {id:'SON-BSR-004',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 4: The Sabbath',subtitle:'The Sabbath is not a rule about a day — it is a governance event',
+   anchor:'Exodus 20:11 · Ezekiel 46:1 · Hebrews 4:9–10',
+   tags:['Suspension','Completion','East Gate','Covenant Sign','The Rest That Remains'],
+   tension:'Gathering vs. Resting',
+   summary:'Volume 4 of 10. The Sabbath is what the morning pattern produces when it has run its full six-day cycle. The east gate opens. The gathering window suspends — not as judgment but as signal: you already have everything you need. Traces the Sabbath from Genesis through the eschatological rest of Hebrews 4.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1_I5AX7IDk14T-Bw-wlFQKbAuEKStJ5_ZOixktrk1MAw/edit',
+   nav:'SON-BSR-005'},
+
+  {id:'SON-BSR-005',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 5: The Heart',subtitle:'The inner east gate — the morning pattern inscribed within',
+   anchor:'Song of Solomon 5:2 · Jeremiah 31:33 · 2 Peter 1:19',
+   tags:['Inner East Gate','Wakeful Heart','New Covenant','Heart as Governance','Indwelling'],
+   tension:'External Pattern vs. Internal Inscription',
+   summary:'Volume 5 of 10. The same pattern — morning, sun, moon, Sabbath — is inscribed not only in the sky but in the human heart. The Hebrew lev is not the seat of emotion; it is the seat of governance. The heart that gathers in the inner morning. The heart that opens the inner east gate.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1hG-RW_QBi6ncDZ3VbCt0tW7c9Lczt_978h5j02ZRybI/edit',
+   nav:'SON-BSR-006'},
+
+  {id:'SON-BSR-006',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 6: The East Gate',subtitle:'The gate that faces east — departure, abomination, and the return',
+   anchor:'Ezekiel 10:19 · Ezekiel 43:1–2 · Luke 1:78',
+   tags:['Babel','Allotment of Nations','The Departure','The Abomination','The Return'],
+   tension:'Correct Direction vs. Wrong Object',
+   summary:'Volume 6 of 10. Twenty-five men at the east gate of the inner court — facing the right direction, worshipping the wrong thing. Ezekiel 8 is the catastrophe. Ezekiel 10 is the departure. Ezekiel 43 is the return. The glory comes back through the same gate it left through.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1sNbjor5dPQ1I8C7ZmESr9ARPTQqv0zutlIiGrWQB_e4/edit',
+   nav:'SON-BSR-007'},
+
+  {id:'SON-BSR-007',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 7: The Circuit',subtitle:'Tequfah — the completed revolution that every culture tracked',
+   anchor:'Psalm 19:6 · Ecclesiastes 1:5 · Genesis 1:14',
+   tags:['Tequfah','Solar Revolution','28-Year Great Cycle','Birkat HaChamah','The Wheel'],
+   tension:'Observation vs. Recognition',
+   summary:'Volume 7 of 10. Tequfah — the Hebrew word for the completed solar revolution. Every culture tracked the equinoxes and solstices. Stonehenge, Egyptian temples, Mayan observatories — they all read the circuit correctly. They just did not know who commissioned it or where it was going.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1ld2ksXLcqhrlEr6D6NfgxDRQdjBM_ao8inrQbuBCWdk/edit',
+   nav:'SON-BSR-008'},
+
+  {id:'SON-BSR-008',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 8: The Bride',subtitle:'The sacred marriage the traditions sought — the chuppah',
+   anchor:'Psalm 19:5 · Song of Solomon 5:2 · Hosea 2:14',
+   tags:['Chuppah','Sacred Marriage','Coniunctio','Covenant Union','Hieros Gamos'],
+   tension:'Archetype vs. Person',
+   summary:'Volume 8 of 10. Every tradition — alchemical coniunctio, Gnostic syzygy, Sufi beloved, hieros gamos — was reaching for the same sacred marriage. They were right to reach. The only error was the one that runs through every tradition that preserved the pattern without the covenant: the name was missing.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1mkBhA98g-ghZ_MgPniJlY3DfQOtM9jzdUy-I-ZNWfBM/edit',
+   nav:'SON-BSR-009'},
+
+  {id:'SON-BSR-009',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 9: The Stars',subtitle:'When the morning stars sang together — the named council of heaven',
+   anchor:'Job 38:7 · Isaiah 14:12 · Jude 1:13',
+   tags:['Kokavim','Morning Stars Sang','Watchers','Music of the Spheres','Ben-Shachar'],
+   tension:'Deduced Music vs. Original Score',
+   summary:'Volume 9 of 10. Pythagoras heard it. Kepler calculated it. Steiner built a cosmology around it. Job was told directly by the voice from the whirlwind: when the morning stars sang together. The stars are not backdrop — they are participants. They sang at the beginning. Here is the score, and the name of the composer.',
+   access:'paid',price:25,
+   stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
+   link:'https://docs.google.com/document/d/1LsA3mTzPL8zkskdydqmHgbWmXo4m5un0W6tqzK15ghg/edit',
+   nav:'SON-BSR-010'},
+
+  {id:'SON-BSR-010',col:'BSR',type:'SCROLL',
+   title:'Before the Sun Rises — Vol. 10: The Utter Darkness',subtitle:'For the one who came out of the occult — every word you love leads home',
+   anchor:'Genesis 1:2 · Job 38:4 · Revelation 22:16',
+   tags:['Tehom','Kabbalah','Hermeticism','Gnosis','The Door Opens From Inside'],
+   tension:'Index vs. Origin',
+   summary:'Volume 10 of 10 — written for the one who has been inside the occult traditions, not the curious observer. The gnosis the Gnostics sought is real knowledge. The Sophia is a real wisdom. The Logos is a real word. The music of the spheres is real music. This volume shows where every fragment came from — and what the original looks like whole.',
+   access:'paid',price:35,
+   stripeLink:'https://buy.stripe.com/3cIbJ27Ggb5F00E2z157W0b',
+   link:'https://docs.google.com/document/d/1CX_q4L_3U_9G4ErDlnAbhXW6AM9kGEiYySA_q6HRh2U/edit',
+   nav:'—'},
 
   // ── SCROLLS ──
   {id:'VEL-001',type:'SCROLL',collection:'VEL',access:'free',
@@ -768,8 +890,7 @@ const ENTRIES = [
    previewBody:`<div class="scroll-body"><p>The governing axiom of this scroll is that the word of the LORD is not subject to human reception as a condition of its effect. Isaiah 55:10–11 establishes the principle with agricultural precision: rain does not fail because the ground is hard. Rain accomplishes what it was sent to do whether the ground receives it or not...</p><p style="color:var(--ink-ghost);font-style:italic">[Full scroll available — 18 pages · includes exhaustive exegesis of Isaiah 55, John 12, and the Revelation 20 judgment framework]</p></div>`,
   },
 
-  {id:'PRT-001',type:'SCROLL',collection:'PRT',access:'paid',price:9,
-   title:'The Pillar Scroll',subtitle:'The Architecture of Meeting — Scripture, Science, and Ancient Witness',
+  {id:'PRT-001',type:'SCROLL',collection:'PRT',access:'paid',price:18,stripeLink:'https://buy.stripe.com/eVqaEY9Oo4HheVy8Xp57W0c',
    burden:'Every portal has a keeper and every meeting has a structure',
    anchor:'Genesis 28:17; Exodus 25:8; John 10:9',
    summary:[
@@ -939,8 +1060,7 @@ const ENTRIES = [
    triggers:['Full registry export to JSON — how to connect Drive to the portal','Collection matrix — all defined codes and their scope','Output type schema — field definitions per work type'],
   },
 
-  {id:'WP-001',type:'WP',collection:'WP',access:'paid',price:22,
-   title:'The Household Covenant',subtitle:'Women, Objects, and the Material Theology of Genesis',
+  {id:'WP-001',type:'WP',collection:'WP',access:'paid',price:25,stripeLink:'https://buy.stripe.com/eVq28s7Gg7Tt9Be2z157W06',
    burden:'The covenant is carried in objects before it is spoken in words',
    anchor:'Genesis 24:22; Genesis 35:4; Genesis 38:18',
    summary:[
