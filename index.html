@@ -195,14 +195,23 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
 .tag-inc{background:var(--crim-pale);color:var(--crimson)}
 
 /* EMPTY STATE */
-.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;color:var(--ink-ghost)}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:100%;overflow-y:auto;gap:10px;color:var(--ink-ghost)}
 .empty-t{font-family:var(--fd);font-size:14px;letter-spacing:.06em;color:var(--ink-soft)}
 .empty-s{font-family:var(--fb);font-size:13px;font-style:italic}
 
 /* HOMEPAGE PANEL */
-.home-panel{padding:2rem 2.5rem;max-width:720px}
-.home-seal{font-family:var(--fm);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-ghost);margin-bottom:1rem;border-bottom:1px solid var(--sb);padding-bottom:.75rem}
-.home-title{font-family:var(--fd);font-size:28px;font-weight:500;color:var(--ink);letter-spacing:.04em;line-height:1.2;margin-bottom:.5rem}
+.home-panel{padding:1.5rem 2rem 2rem;max-width:680px;width:100%}
+.h-series-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1rem 0 1.25rem}
+.h-series{padding:14px 16px;cursor:pointer;transition:opacity .15s;border:1px solid transparent}
+.h-series:hover{opacity:.8}
+.h-edm{background:var(--crim-pale);border-color:var(--crimson)}
+.h-bsr{background:var(--gold-pale);border-color:var(--gold)}
+.h-series-label{font-family:var(--fd);font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px}
+.h-series-sub{font-family:var(--fb);font-size:11px;color:var(--ink-soft);font-style:italic;margin-bottom:8px}
+.h-edm .h-series-cta{font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson)}
+.h-bsr .h-series-cta{font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.home-seal{font-family:var(--fm);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-ghost);margin-bottom:.5rem;border-bottom:1px solid var(--sb);padding-bottom:.5rem}
+.home-title{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--ink);letter-spacing:.04em;line-height:1.2;margin-bottom:0}
 .home-sub{font-family:var(--fb);font-size:16px;font-style:italic;color:var(--ink-soft);margin-bottom:1.5rem;line-height:1.5}
 .home-verse{font-family:var(--fb);font-size:15px;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--gold-pale);padding-left:14px;margin-bottom:1.5rem;line-height:1.7}
 .home-verse cite{display:block;font-family:var(--fm);font-size:9px;font-style:normal;letter-spacing:.08em;color:var(--ink-ghost);margin-top:4px}
@@ -265,32 +274,18 @@ main{display:flex;flex-direction:column;overflow:hidden;background:var(--parchme
 <main id="main-panel">
   <div class="empty" id="home-view">
     <div class="home-panel">
-      <div class="home-seal">School of the Nabi · The Archive · thenabiglobal.com</div>
+      <div class="home-seal">School of the Nabi · thenabiglobal.com</div>
       <div class="home-title">The Universal SON Viewer</div>
-      <div class="home-sub">A governed canonical archive of scrolls, studies, nation indexes, and frameworks — navigable, searchable, and layered.</div>
-      <div class="home-verse">
-        "And Moses said unto him, Enviest thou for my sake? would God that all the LORD'S people were prophets, and that the LORD would put his spirit upon them!"
-        <cite>Numbers 11:29 (KJV)</cite>
-      </div>
-      <div class="home-body">Select any entry from the sidebar to begin. Use the filter chips to browse by output type or collection. Free entries open immediately. Paid entries show a preview and an obtain button.</div>
-      <div style="border:1px solid var(--crimson);background:var(--crim-pale);padding:14px 16px;margin-bottom:1.25rem">
-        <div style="font-family:var(--fm);font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:6px">New series · May 2026</div>
-        <div style="font-family:var(--fd);font-size:16px;font-weight:500;color:#3d0808;margin-bottom:4px">The Edom Threshold</div>
-        <div style="font-family:var(--fb);font-size:13px;font-style:italic;color:var(--crimson);margin-bottom:10px">A pilgrim's theology in 18 scrolls — Seir to Hermon</div>
-        <div style="font-family:var(--fb);font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:12px">You do not start at the promise. You start at Seir — holding something you have not yet become worthy of holding. Everything between here and Hermon is what God does to fix that.</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="hcta primary" style="background:var(--crimson);border-color:var(--crimson);color:#fff" onclick="selectEntry('SON-EDM-001')">Begin with Seir &rarr;</button>
-          <button class="hcta" onclick="tf('EDM')">Browse all 18 scrolls</button>
+      <div class="h-series-row">
+        <div class="h-series h-edm" onclick="selectEntry('SON-EDM-001')">
+          <div class="h-series-label">Edom Threshold Series</div>
+          <div class="h-series-sub">18 scrolls · Seir to Hermon</div>
+          <div class="h-series-cta">Begin &rarr;</div>
         </div>
-      </div>
-      <div style="border:1px solid var(--gold);background:var(--gold-pale);padding:14px 16px;margin-bottom:1.25rem">
-        <div style="font-family:var(--fm);font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">New series · May 2026</div>
-        <div style="font-family:var(--fd);font-size:16px;font-weight:500;color:#5a3a00;margin-bottom:4px">Before the Sun Rises</div>
-        <div style="font-family:var(--fb);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:10px">Ten volumes on the pattern all cultures saw and only one preserved</div>
-        <div style="font-family:var(--fb);font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:12px">Every culture tracked the sunrise. Egypt built temples to it. Babylon mapped it. Pythagoras heard its music. One people was given the name of the one who commissioned it — and forgot to teach why it mattered.</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="hcta primary" style="background:var(--gold);border-color:var(--gold);color:#fff" onclick="selectEntry('SON-BSR-001')">Begin with The Morning &rarr;</button>
-          <button class="hcta" onclick="tf('BSR')">Browse all 10 volumes</button>
+        <div class="h-series h-bsr" onclick="selectEntry('SON-BSR-001')">
+          <div class="h-series-label">Before the Sun Rises</div>
+          <div class="h-series-sub">10 volumes · Morning to Utter Darkness</div>
+          <div class="h-series-cta">Begin &rarr;</div>
         </div>
       </div>
       <div class="home-collections" id="home-cols"></div>
